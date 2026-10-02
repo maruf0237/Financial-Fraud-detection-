@@ -1,4 +1,4 @@
-# FinGuard Fraud Detection
+# Financial Fraud Detection
 
 This repository currently documents the **Exploratory Data Analysis (EDA)** phase for fraud detection using the notebook:
 
