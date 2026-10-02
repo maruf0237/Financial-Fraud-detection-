@@ -1,0 +1,153 @@
+
+
+FRAUD DETECTION - COMPREHENSIVE PERFORMANCE REPORT:
+Generated: 2026-07-22 02:41:48
+
+
+MODEL INFORMATION:
+
+Best Model: XGBoost
+Model Type: str
+Best F1 Score: 0.3783
+Best Accuracy: 0.9961
+
+
+TEST DATASET INFORMATION:
+
+Total Test Samples: 1,272,524
+Fraud Cases: 1,643
+Non-Fraud Cases: 1,270,881
+Fraud Ratio: 0.1291%
+
+
+BEST MODEL PERFORMANCE DETAILS:
+
+Metric                  Score
+----------------------------------------
+Accuracy:               0.9961
+Precision:              0.2388
+Recall:                 0.9093
+F1 Score:               0.3783
+ROC AUC:                0.9975
+MCC:                    0.4650
+
+Confusion Matrix:
+              Predicted
+              Non-Fraud    Fraud
+Actual Non-Fraud  1266120      4761
+Actual Fraud          149      1494
+
+Additional Metrics:
+  - True Positive Rate:  0.9093
+  - True Negative Rate:  0.9963
+  - False Positive Rate: 0.0037
+  - False Negative Rate: 0.0907
+
+
+ALL MODELS PERFORMANCE COMPARISON
+
+
+logistic_regression:
+  - Accuracy:  0.9484
+  - Precision: 0.0243
+  - Recall:    0.9945
+  - F1 Score:  0.0474
+  - ROC AUC:   0.9949
+  - MCC:       0.1513
+  - TP:  1634  FP: 65634  TN: 1205247  FN:     9
+
+decision_tree:
+  - Accuracy:  0.9808
+  - Precision: 0.0551
+  - Recall:    0.8576
+  - F1 Score:  0.1035
+  - ROC AUC:   0.9286
+  - MCC:       0.2145
+  - TP:  1409  FP: 24173  TN: 1246708  FN:   234
+
+svm:
+  - Accuracy:  0.9991
+  - Precision: 0.9105
+  - Recall:    0.3220
+  - F1 Score:  0.4757
+  - ROC AUC:   0.9948
+  - MCC:       0.5411
+  - TP:   529  FP:    52  TN: 1270829  FN:  1114
+
+random_forest:
+  - Accuracy:  0.9978
+  - Precision: 0.3494
+  - Recall:    0.8357
+  - F1 Score:  0.4927
+  - ROC AUC:   0.9951
+  - MCC:       0.5395
+  - TP:  1373  FP:  2557  TN: 1268324  FN:   270
+
+gradient_boosting:
+  - Accuracy:  0.9991
+  - Precision: 0.6809
+  - Recall:    0.5520
+  - F1 Score:  0.6097
+  - ROC AUC:   0.9021
+  - MCC:       0.6127
+  - TP:   907  FP:   425  TN: 1270456  FN:   736
+
+xgboost:
+  - Accuracy:  0.9991
+  - Precision: 0.6001
+  - Recall:    0.8229
+  - F1 Score:  0.6940
+  - ROC AUC:   0.9982
+  - MCC:       0.7023
+  - TP:  1352  FP:   901  TN: 1269980  FN:   291
+
+lightgbm:
+  - Accuracy:  0.9880
+  - Precision: 0.0938
+  - Recall:    0.9550
+  - F1 Score:  0.1707
+  - ROC AUC:   0.9981
+  - MCC:       0.2972
+  - TP:  1569  FP: 15167  TN: 1255714  FN:    74
+
+voting_ensemble:
+  - Accuracy:  0.9961
+  - Precision: 0.2388
+  - Recall:    0.9093
+  - F1 Score:  0.3783
+  - ROC AUC:   0.9975
+  - MCC:       0.4650
+  - TP:  1494  FP:  4761  TN: 1266120  FN:   149
+
+
+MODEL RANKING (by F1 Score)
+
+Rank  Model                           F1 Score
+----  ------------------------------  --------
+   1  xgboost                         0.6940
+   2  gradient_boosting               0.6097
+   3  random_forest                   0.4927
+   4  svm                             0.4757
+   5  voting_ensemble                 0.3783
+   6  lightgbm                        0.1707
+   7  decision_tree                   0.1035
+   8  logistic_regression             0.0474
+
+
+RECOMMENDATIONS
+
+Based on the evaluation results:
+
+1. Best Model: XGBoost (F1 Score: 0.3783)
+   - This model provides the best balance between precision and recall
+   - Recommended for production deployment
+
+2. Model Comparison:
+   - If you need higher recall (catch more fraud), consider: xgboost
+   - If you need higher precision (fewer false alarms), consider: logistic_regression
+
+3. Threshold Optimization:
+   - Current threshold: 0.5
+   - Consider adjusting threshold based on business requirements:
+     - Lower threshold: More fraud caught, more false alarms
+     - Higher threshold: Fewer false alarms, more fraud missed
